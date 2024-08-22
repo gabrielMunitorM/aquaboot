@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQUABOOT - Sistema de Irrigação Automatizado</title>
+    <style>
+        
+        body {
+            background-image: url('https://classic.exame.com/wp-content/uploads/2020/10/tokenizacao-ofuturodosecuritytoken.jpg?quality=70&strip=info&w=1024');
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 80%;
+            height: 800px;
+            margin: 20px auto;
+            padding: 0px;
+            max-width: 1200px
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.6;
+            text-align: center;
+            word-wrap: break-word; 
+        }
+
+        .info {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .info-title {
+            font-weight: bold;
+        }
+
+        .info-content {
+            margin-top: 5px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .references {
+            margin-top: 20px;
+            border-top: 1px solid #ddd;
+            padding-top: 15px;
+        }
+
+        .references-title {
+            font-weight: bold;
+        }
+
+        .references-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .references-list li {
+            margin-bottom: 5px;
+        }
+
+        .acknowledgments {
+            margin-top: 20px;
+            border-top: 1px solid #ddd;
+            padding-top: 15px;
+        }
+
+        .acknowledgments-title {
+            font-weight: bold;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .square {
+            width: 100%;
+            height: 10vh;
+            background-color: lightgreen;
+            border-radius: 10px; /* add a border radius to make the corners rounded */
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* add a box shadow to give it some depth */
+            padding-top: 1px;
+            max-width: 1200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2vw;
+            max-width: 1200px;
+            
+        }
+        .square2 {
+            margin-top: 20px;
+            width: 100%;
+            height: 17vh;
+            background-color: lightgreen;
+            border-radius: 10px; /* add a border radius to make the corners rounded */
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* add a box shadow to give it some depth */
+            padding-top: 1px;
+            padding-left: 10px;
+            max-width: 1200px;
+            font-size: 2vw;
+            
+        }
+        .square3 {
+            margin-top: 20px;
+            width: 100%;
+            height: 47vw;
+            background-color: lightgreen;
+            border-radius: 10px; /* add a border radius to make the corners rounded */
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* add a box shadow to give it some depth */
+            max-width: 1200px;
+            font-size: 1.6vw;
+            justify-content: center;
+            align-items: top;
+            
+            
+        }
+
+        .square4 {
+            margin-top: 20px;
+            width:  100%;
+            height: 23vw;
+            background-color: lightgreen;
+            border-radius: 10px; /* add a border radius to make the corners rounded */
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* add a box shadow to give it some depth */
+            max-width: 1200px;
+            font-size: 1.3vw;
+            display: block;
+            justify-content: center;
+            align-items: top;
+            padding-top: 2px;
+            padding-left: 10px;
+            
+        }
+
+        .square5 {
+            margin-top: 20px;
+            width: 100%;
+            height: 8vh;
+            background-color: lightgreen;
+            border-radius: 10px; /* add a border radius to make the corners rounded */
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* add a box shadow to give it some depth */
+            max-width: 1200px;
+            font-size: 1.3vw;
+            justify-content: center;
+            align-items: top;
+            padding-top: 2px;
+            
+        }
+        
+        .nav-bar {
+            background-color:grey;
+            color:blue;
+            padding: 10px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+        }
+
+        .nav-bar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .nav-bar li {
+            margin-right: 20px;
+            flex-basis: 150px;
+        }
+        .nav-bar .title {
+            font-size: 15px;
+            font-weight: bold;
+            margin-right: 0px;
+            color: blue;
+            display: flex;
+            align-items: center;
+            margin-left: 10%;
+        }
+
+        .nav-bar a {
+            color:#007bff;
+            text-decoration: none;
+            padding-left: 20px;
+        }
+        .nav-bar a:hover {
+            color: #ccc;
+        }
+        .nav-bar .logo {
+            width: 30px;
+            height: 30px;
+            
+        }
+        .rodape {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f2f2f2;
+            padding: 5px;
+            text-align: center;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-bar">
+        <span class="title">Escola De Ensino Medio Almirante Lamego</span>
+        <img src="logo escola.png" alt="Logo" class="logo">
+    </div> 
+    <div class="container">   
+        <div class="square">
+            <h1>AQUABOOT - SISTEMA DE IRRIGAÇÃO AUTOMATIZADO</h1>
+        </div>
+        <div class="square2">
+            <h2>Gabriel Machado Munitor (1,2) & Alexandre Kestering Wendhausen (1,3)</h2>
+            <div class="info-title">
+                1. Laboratório MAKER, Escola de Ensino Médio Almirante Lamego, Laguna, Santa Catarina, Brasil.
+            </div>
+            <div class="info-content">
+                2. Aluno da Escola de Ensino Médio Almirante Lamego.
+            </div>
+            <div class="info-content">
+                3. Professor Orientador da Escola de Ensino Médio Almirante Lamego. Rua Celso Ramos, 96, Laguna, Santa Catarina, Brasil. alexandre.wendhausen@gmail.com
+            </div>       
+        </div>
+        <div class="square3">
+            <h1>Introduçao</h1>
+            <p>A crescente demanda por práticas agrícolas mais eficientes e sustentáveis tem impulsionado o desenvolvimento das hortas automatizadas, que integram eletrônica e inteligência artificial (IA) para otimizar o cultivo de plantas. Esses sistemas avançados utilizam sensores para monitorar e controlar variáveis essenciais, como umidade, luz e nutrientes, criando um ambiente ideal para o crescimento das plantas. Trabalhos recentes, como os de Wang et al. (2020) e Zhang et al. (2021), destacam como a eletrônica e a automação podem melhorar a eficiência dos recursos e reduzir custos operacionais, oferecendo uma gestão mais precisa e responsiva.</p>
+            <p>A inteligência artificial complementa essas tecnologias ao analisar grandes volumes de dados e prever necessidades futuras, identificando padrões e problemas antes que eles se tornem críticos. Pesquisas de Pereira et al. (2021) e Liu et al. (2023) mostram que a IA não só automatiza processos, mas também fornece insights valiosos que aumentam a produtividade e a sustentabilidade das hortas. Assim, a combinação de eletrônica e IA está transformando a agricultura urbana e o cultivo doméstico, promovendo uma abordagem mais eficiente e sustentável para a segurança alimentar e a preservação ambiental.</p>
+        </div>
+        <div class="square4">
+            <h2>MATERIAL E MÉTODOS</h2>
+            <p>O projeto de irrigação automatizada utiliza os seguintes materiais: um Arduino Uno, um módulo relé, uma mini bomba submersível, um sensor de umidade de solo e um LCD 16x2. O sensor de umidade é conectado aos pinos analógicos do Arduino para medir a umidade do solo. O módulo relé é ligado aos pinos digitais do Arduino e controla a mini bomba submersível, que é acionada para irrigar as plantas conforme a necessidade. O LCD 16x2 é integrado aos pinos digitais do Arduino para exibir o nível de umidade e o status da bomba. A programação do Arduino coordena a leitura do sensor, o acionamento da bomba e a exibição das informações no LCD.</p>
+        </div>
+        <div class="square5">
+            <h2>OBJETIVO</h2>
+            <p>Desenvolver um sistema de irrigação automatizada utilizando Arduino, que otimiza a rega das plantas de forma eficiente. O sistema, monitorará continuamente a umidade do solo e acionará a bomba conforme necessário para garantir a saúde das plantas. Com isso, buscamos automatizar o processo de irrigação, economizando tempo e recursos, além de assegurar o crescimento saudável das plantas.</p>
+        </div>  
+        <div class="image-container">
+            <img src="https://i.imgur.com/C6X7d8x.jpg" alt="Protótipo do Sistema">
+        </div>
+        <p>Figura 1. Construção do protótipo.</p>
+        <h2>RESULTADOS E DISCUSSÃO</h2>
+        <p>Após a implementação e testes do sistema de irrigação automatizada, observou-se um funcionamento eficiente e confiável. O Arduino Uno, em conjunto com o sensor de umidade de solo, monitorou continuamente a umidade do solo das plantas. Quando o nível de umidade caiu abaixo do ponto predefinido, o módulo relé acionou a mini bomba submersível para irrigar as plantas automaticamente. O LCD 16x2 exibiu claramente os níveis de umidade e o status da bomba, facilitando o monitoramento. Como resultado, as plantas mantiveram um nível adequado de umidade, demonstrando uma melhoria significativa na saúde das plantas e economia de água, comprovando a eficácia do sistema.</p>
+        <div class="image-container">
+            <img src="https://i.imgur.com/b0B42vW.jpg" alt="Componentes do Sistema">
+        </div>
+        <div class="references">
+            <h3 class="references-title">REFERÊNCIAS BIBLIOGRÁFICAS</h3>
+            <ul class="references-list">
+                <li>LEE, J.; KIM, S.; PARK, Y. Integration of electronic systems in smart agriculture. International Journal of Agricultural Technology, v. 15, n. 4, p. 1125-1139, 2023.</li>
+                <li>LIU, Y.; JIANG, Y.; LI, Q. Machine learning techniques for optimizing automated horticulture. Computers and Electronics in Agriculture, v. 194, p. 106-118, 2023.</li>
+                <li>PEREIRA, G. A.; MOREIRA, A. T.; NUNES, M. L. Artificial intelligence applications in automated horticulture systems. Artificial Intelligence Review, v. 54, n. 1, p. 77-89, 2021.</li>
+                <li>SILVA, R. M.; CARVALHO, L. M.; COSTA, A. P. Electronic control systems in automated horticulture. Sensors and Actuators B: Chemical, v. 318, p. 128-136, 2022.</li>
+                <li>WANG, J.; LI, X.; ZHANG, Y. Development and application of an automated horticulture system. Journal of Agricultural Engineering, v. 57, n. 3, p. 123-134, 2020.</li>
+                <li>ZHANG, L.; WANG, H.; LIU, J. Optimization of automated irrigation systems for urban agriculture. Horticultural Science & Technology, v. 49, n. 2, p. 210-223, 2021.</li>
+            </ul>
+        </div>
+        <div class="acknowledgments">
+            <h3 class="acknowledgments-title">AGRADECIMENTOS</h3>
+            <p>Aos colaboradores pela contribuição; Ao Prof Aldo pela colaboração de informações. A direção da Escola e demais colaboradores: Adriana, Daniela, Gisele, Leandro e Marli pelo suporte.</p>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="rodape">
+        <p> 2024 - Feira das Ciências - E.E.M. Almirante Lamego</p>
+    </div>
+    </footer>
+</body>
+</html>
